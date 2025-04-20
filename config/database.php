@@ -14,8 +14,12 @@ function getDbConnection() {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
-        return new PDO($dsn, DB_USER, DB_PASS, $options);
+        
+        // Test the connection explicitly
+        $conn = new PDO($dsn, DB_USER, DB_PASS, $options);
+        return $conn;
     } catch (PDOException $e) {
-        die('Connection error: ' . $e->getMessage());
+        echo "Connection error: " . $e->getMessage(); // More visible error
+        die();
     }
 } 
