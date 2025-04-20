@@ -2,7 +2,7 @@
 // Database configuration
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'wijaya28@');
 define('DB_NAME', 'pomodoro_db');
 
 // Create PDO connection
